@@ -3,12 +3,6 @@
 
 <!DOCTYPE html>
 <html>
- <head>
-  <title>Import Excel File in Laravel</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- </head>
  <body>
   <br />
   
@@ -57,17 +51,19 @@
    <br />
    <div class="panel panel-default">
     <div class="panel-heading">
-     <h3 class="panel-title">Customer Data</h3>
+     <h3 class="panel-title">ข้อมูลนักศึกษา</h3>
     </div>
     <div class="panel-body">
      <div class="table-responsive">
       <table class="table table-bordered table-striped">
        <tr>
-        <th>Customer Name</th>
+       <th>รหัสนักศึกษา</th>
+        <th>ชื่อนักศึกษา</th>
         
        </tr>
        @foreach($data as $row)
        <tr>
+       <td>{{$row->user}}</td>
         <td>{{ $row->name }}</td>
         
        </tr>

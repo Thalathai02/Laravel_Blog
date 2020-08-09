@@ -27,10 +27,7 @@ class UsersImport implements ToModel
             'parent_name'  => $row[9],
             'parent_phone'  => $row[10],
             'user'  => $row[11],
-            'password'  => $row[12],
-
-
+            'password'  => $row[12]
         ]);
-        
     }
 }

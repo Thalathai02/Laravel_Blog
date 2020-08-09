@@ -25,5 +25,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('contact','ContactController')->middleware('auth');
 
-Route::get('/nameStd', 'ImportExcelController@index');
-Route::post('/nameStd', 'ImportExcelController@import');
+Route::get('/nameStd', 'ImportExcelController@index')->middleware('auth');
+Route::post('/nameStd', 'ImportExcelController@import')->middleware('auth');
