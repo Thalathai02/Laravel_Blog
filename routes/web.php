@@ -17,8 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/nameStd',function(){
+    return view('STD.NameStd');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('contact','ContactController')->middleware('auth');
+
+Route::get('/nameStd', 'ImportExcelController@index');
+Route::post('/nameStd', 'ImportExcelController@import');
