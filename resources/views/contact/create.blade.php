@@ -24,6 +24,7 @@
         {!! Form::label('phone')!!}
         {!! Form::text('phone',null,["class"=>"form-control"]) !!}
         </div>
+    
         <input type="submit" value="บันทึก" class="btn btn-primary col-2 " name="" id="">
         <a href="/contact" class="btn btn-success col-2">กลับ</a>
     </div>

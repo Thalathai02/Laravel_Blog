@@ -12,7 +12,7 @@ class ImportExcelController extends Controller
     function index()
     {
      $data = reg_std::orderBy('id', 'ASC')->get();
-     return view('STD.NameStd', compact('data'));
+     return view('STD.index', compact('data'));
     }
 
     function import(Request $request)
@@ -22,6 +22,33 @@ class ImportExcelController extends Controller
         ]);
         Excel::import(new UsersImport, request()->file('import_file'));
         return back()->with('success', 'Contacts imported successfully.');
+    }
+    public function create()
+    {
+        return view('STD.Std_create');
+    
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            
+
+            'std_code'=>'required',
+            'name',
+            'nick_name',
+            'phone',
+            'lineId',
+            'email'=>'required|email',
+            'facebook',
+            'address',
+            'parent_name',
+            'parent_phone',
+            'user',
+            'password'
+        ]);
+        reg_std::create($request->all());
+        return redirect('/STD');
+    
     }
 }
 

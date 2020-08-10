@@ -18,12 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/nameStd',function(){
-    return view('STD.NameStd');
+    return view('STD');
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('contact','ContactController')->middleware('auth');
 
-Route::get('/nameStd', 'ImportExcelController@index')->middleware('auth');
-Route::post('/nameStd', 'ImportExcelController@import')->middleware('auth');
+Route::resource('/STD','ImportExcelController')->middleware('auth');
+Route::post('/STD', 'ImportExcelController@import')->middleware('auth');
+Route::post('/STD/create', 'ImportExcelController@store')->middleware('auth');
